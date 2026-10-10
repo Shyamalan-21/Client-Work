@@ -1,7 +1,7 @@
 export const business = {
-  name: "Sri Maruthi Old Silk Buyer",
-  legalName: "Sri Maruthi Old Silk Buyer",
-  centreName: "Sri Maruthi Old Silk Buyer",
+  name: "Sri Maruthi Old Silk Buyers",
+  legalName: "Sri Maruthi Old Silk Buyers",
+  centreName: "Sri Maruthi Old Silk Buyers",
   tagline: "Tradition. Trust. True Value.",
   primaryBusiness: "Buying old silk sarees and silk garments",
   additionalServices: "Gold and silver polishing and repair",

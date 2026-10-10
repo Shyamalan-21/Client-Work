@@ -34,13 +34,13 @@ const fontBody = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://srimaruthisilkcentre.com"),
   title: {
-    default: "Sri Maruthi Old Silk Buyer | Old Silk Saree Buyers in Chennai | T. Nagar",
-    template: "%s | Sri Maruthi Old Silk Buyer",
+    default: "Sri Maruthi Old Silk Buyers",
+    template: "%s | Sri Maruthi Old Silk Buyers",
   },
   description:
-    "Sri Maruthi Old Silk Buyer in T. Nagar, Chennai buys old silk sarees, Kanchipuram, Banarasi, Mysore silks, and silk dhotis. Individual, transparent garment evaluations on N Usman Road.",
+    "Sri Maruthi Old Silk Buyers in T. Nagar, Chennai buys old silk sarees, Kanchipuram, Banarasi, Mysore silks, and silk dhotis. Individual, transparent garment evaluations on N Usman Road.",
   keywords: [
-    "Sri Maruthi old silk buyer",
+    "Sri Maruthi old silk buyers",
     "Old silk saree buyers in Chennai",
     "Sell old silk sarees in Chennai",
     "Old silk saree buyers in T. Nagar",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     "Sell old silk garments",
     "Zari silk buyers Chennai",
   ],
-  authors: [{ name: "Sri Maruthi Old Silk Buyer" }],
-  creator: "Sri Maruthi Old Silk Buyer",
-  publisher: "Sri Maruthi Old Silk Buyer",
+  authors: [{ name: "Sri Maruthi Old Silk Buyers" }],
+  creator: "Sri Maruthi Old Silk Buyers",
+  publisher: "Sri Maruthi Old Silk Buyers",
   robots: {
     index: true,
     follow: true,
@@ -62,22 +62,28 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://srimaruthisilkcentre.com",
-    siteName: "Sri Maruthi Old Silk Buyer",
-    title: "Sri Maruthi Old Silk Buyer | Old Silk Saree Buyers in Chennai",
+    siteName: "Sri Maruthi Old Silk Buyers",
+    title: "Sri Maruthi Old Silk Buyers",
     description:
       "Sell your old silk sarees, Kanchipuram weaves, and silk dhotis in T. Nagar, Chennai. Fair, individual garment appraisals.",
     images: [
       {
-        url: "/images/logo/official-logo.png",
-        width: 800,
-        height: 800,
-        alt: "Sri Maruthi Old Silk Buyer - Official Emblem",
+        url: "/icon.png",
+        width: 192,
+        height: 192,
+        alt: "Sri Maruthi Old Silk Buyers - Official Logo",
       },
     ],
   },
   icons: {
-    icon: "/images/logo/official-logo.png",
-    apple: "/images/logo/official-logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "192x192", type: "image/png" },
+    ],
   },
   alternates: {
     canonical: "/",
