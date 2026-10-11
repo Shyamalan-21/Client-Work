@@ -10,11 +10,11 @@ import { Container } from "@/components/ui/Container";
 
 export function Hero() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFEB] py-10 lg:py-16 border-b border-[#C6A15B]/25">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFEB] pt-3 pb-6 sm:pt-5 sm:pb-8 lg:pt-5 lg:pb-8 xl:pt-7 xl:pb-9 border-b border-[#C6A15B]/25">
       {/* Background ambient warm radiant glow and silk textile shimmer */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#D4AF37]/15 blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] rounded-full bg-[#B71925]/10 blur-[110px]" />
+        <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] rounded-full bg-[#D4AF37]/15 blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#B71925]/10 blur-[100px]" />
         <div className="absolute inset-0 textile-pattern opacity-40" />
       </div>
 
@@ -23,7 +23,7 @@ export function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center">
           {/* Left Column: Brand Editorial & Conversion CTAs (7 cols) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -33,7 +33,7 @@ export function Hero() {
           >
             {/* Main Headline */}
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#14100E] tracking-tight leading-[1.15] mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] font-black text-[#14100E] tracking-tight leading-[1.12] mb-3"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Give Your <span className="text-[#B71925]">Old Silk</span> a{" "}
@@ -41,15 +41,15 @@ export function Hero() {
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-[#4A3E39] leading-relaxed max-w-xl mb-6 font-normal">
+            <p className="text-sm sm:text-base lg:text-[17px] text-[#4A3E39] leading-relaxed max-w-xl mb-4 lg:mb-5 font-normal">
               Looking to sell your old silk sarees or silk garments?{" "}
-              <strong className="text-[#14100E] font-bold">Sri Maruthi Old Silk Buyer</strong> in{" "}
+              <strong className="text-[#14100E] font-bold">Sri Maruthi Old Silk Buyers</strong> in{" "}
               <span className="text-[#B71925] font-semibold">T. Nagar, Chennai</span>, offers a convenient way to
               enquire about your treasured silks and receive an individual, transparent evaluation.
             </p>
 
             {/* Call to Actions with Hover Micro-Interactions */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-4 lg:mb-5">
               <Button
                 href="/sell-your-sarees"
                 variant="primary"
@@ -72,7 +72,7 @@ export function Hero() {
             </div>
 
             {/* Verified Location & Business Metadata Trust Bar */}
-            <div className="pt-4 border-t border-[#C6A15B]/30 flex flex-wrap items-center gap-6 text-xs text-[#5C4D46]">
+            <div className="pt-3 border-t border-[#C6A15B]/30 flex flex-wrap items-center gap-4 lg:gap-6 text-xs text-[#5C4D46]">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#B71925] shrink-0" />
                 <span className="font-medium text-[#14100E]">34/146, N Usman Road, T. Nagar, Chennai</span>
@@ -96,21 +96,21 @@ export function Hero() {
             className="lg:col-span-5 relative flex justify-center items-center"
           >
             {/* Ambient Divine Radiance Aura behind the picture */}
-            <div className="absolute w-[360px] sm:w-[440px] h-[360px] sm:h-[440px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
+            <div className="absolute w-[300px] sm:w-[360px] h-[300px] sm:h-[360px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
 
             {/* Frameless floating image presentation */}
             <motion.div
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, -5, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] flex items-center justify-center group"
+              className="relative w-full max-w-[270px] sm:max-w-[310px] md:max-w-[330px] lg:max-w-[350px] xl:max-w-[380px] aspect-[3/4] flex items-center justify-center group"
             >
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(183,25,37,0.18)] border-2 border-[#C6A15B]/50 bg-white">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(183,25,37,0.16)] border-2 border-[#C6A15B]/50 bg-white">
                 <Image
                   src="/images/hero/hanuman-hero.jpg"
-                  alt="Lord Maruthi (Hanuman) - Sri Maruthi Old Silk Buyer"
+                  alt="Lord Maruthi (Hanuman) - Sri Maruthi Old Silk Buyers"
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, 450px"
+                  sizes="(max-width: 768px) 100vw, 380px"
                   className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
