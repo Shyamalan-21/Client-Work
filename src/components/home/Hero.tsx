@@ -10,7 +10,7 @@ import { Container } from "@/components/ui/Container";
 
 export function Hero() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFEB] pt-3 pb-6 sm:pt-5 sm:pb-8 lg:pt-5 lg:pb-8 xl:pt-7 xl:pb-9 border-b border-[#C6A15B]/25">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFEB] min-h-[calc(100dvh-68px)] lg:h-[calc(100dvh-68px)] py-6 lg:py-0 border-b border-[#C6A15B]/25">
       {/* Background ambient warm radiant glow and silk textile shimmer */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] rounded-full bg-[#D4AF37]/15 blur-[100px] animate-pulse" />
@@ -22,8 +22,8 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B]/60 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B]/40 to-transparent" />
 
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center">
+      <Container className="relative z-10 w-full h-full flex items-center py-2 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center w-full">
           {/* Left Column: Brand Editorial & Conversion CTAs (7 cols) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -93,24 +93,24 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative flex justify-center items-center"
+            className="lg:col-span-5 relative flex justify-center items-center h-full"
           >
             {/* Ambient Divine Radiance Aura behind the picture */}
-            <div className="absolute w-[300px] sm:w-[360px] h-[300px] sm:h-[360px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
+            <div className="absolute w-[320px] sm:w-[400px] h-[320px] sm:h-[400px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
 
             {/* Frameless floating image presentation */}
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative w-full max-w-[270px] sm:max-w-[310px] md:max-w-[330px] lg:max-w-[350px] xl:max-w-[380px] aspect-[3/4] flex items-center justify-center group"
+              className="relative h-[min(540px,calc(100dvh-130px))] max-h-[560px] aspect-[3/4] flex items-center justify-center group"
             >
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(183,25,37,0.16)] border-2 border-[#C6A15B]/50 bg-white">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_45px_rgba(183,25,37,0.18)] border-2 border-[#C6A15B]/50 bg-white">
                 <Image
                   src="/images/hero/hanuman-hero.jpg"
                   alt="Lord Maruthi (Hanuman) - Sri Maruthi Old Silk Buyers"
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, 380px"
+                  sizes="(max-width: 768px) 100vw, 450px"
                   className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
