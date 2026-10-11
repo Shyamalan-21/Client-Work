@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin, Phone, MessageSquare, Mail, Navigation, ExternalLink } from "lucide-react";
+import { MapPin, Phone, MessageSquare, Mail, Navigation, ExternalLink, Sparkles } from "lucide-react";
 import { business, getWhatsAppUrl } from "@/data/business";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -16,7 +16,7 @@ export function LocationSection() {
           <SectionHeading
             eyebrow="Visit Our Store"
             title="Conveniently Located in T. Nagar"
-            subtitle="Visit Sri Maruthi Old Silk Buyer on N Usman Road, Chennai's premier textile destination."
+            subtitle="Visit Sri Maruthi Old Silk Buyers on N Usman Road, exactly opposite to GRT Jewellers in T. Nagar, Chennai."
             align="center"
           />
         </FadeIn>
@@ -42,8 +42,10 @@ export function LocationSection() {
 
               <div className="text-sm text-[#4A3E39] leading-relaxed space-y-1 mb-4 border-y border-[#C6A15B]/25 py-3 font-normal">
                 <p className="font-semibold text-[#14100E]">{business.address.street}</p>
-                <p>{business.address.locality}, {business.address.city}</p>
-                <p>{business.address.state} - {business.address.postalCode}, {business.address.country}</p>
+                <p className="text-[#B71925] font-semibold flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5 text-[#C6A15B] shrink-0" /> Exactly Opposite to GRT Jewellers
+                </p>
+                <p>{business.address.locality}, {business.address.city} - {business.address.postalCode}</p>
               </div>
 
               <div className="space-y-3.5 text-sm text-[#14100E] mb-6">

@@ -24,12 +24,12 @@ export function Hero() {
 
       <Container className="relative z-10 w-full h-full flex items-center py-2 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center w-full">
-          {/* Left Column: Brand Editorial & Conversion CTAs (7 cols) */}
+          {/* Left Column: Brand Editorial & Conversion CTAs (order-2 on mobile, order-1 on desktop) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="lg:col-span-7 flex flex-col items-start"
+            className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-start"
           >
             {/* Main Headline */}
             <h1
@@ -43,9 +43,11 @@ export function Hero() {
             {/* Supporting Copy */}
             <p className="text-sm sm:text-base lg:text-[17px] text-[#4A3E39] leading-relaxed max-w-xl mb-4 lg:mb-5 font-normal">
               Looking to sell your old silk sarees or silk garments?{" "}
-              <strong className="text-[#14100E] font-bold">Sri Maruthi Old Silk Buyers</strong> in{" "}
-              <span className="text-[#B71925] font-semibold">T. Nagar, Chennai</span>, offers a convenient way to
-              enquire about your treasured silks and receive an individual, transparent evaluation.
+              <strong className="text-[#14100E] font-bold">Sri Maruthi Old Silk Buyers</strong> on N Usman Road in{" "}
+              <span className="text-[#B71925] font-semibold">T. Nagar, Chennai</span>{" "}
+              <span className="inline-block bg-[#B71925]/10 text-[#B71925] font-semibold px-2 py-0.5 rounded text-xs sm:text-sm">
+                (Right Opposite to GRT Jewellers)
+              </span>, offers a convenient way to enquire about your treasured silks and receive an individual, transparent evaluation.
             </p>
 
             {/* Call to Actions with Hover Micro-Interactions */}
@@ -75,7 +77,7 @@ export function Hero() {
             <div className="pt-3 border-t border-[#C6A15B]/30 flex flex-wrap items-center gap-4 lg:gap-6 text-xs text-[#5C4D46]">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#B71925] shrink-0" />
-                <span className="font-medium text-[#14100E]">34/146, N Usman Road, T. Nagar, Chennai</span>
+                <span className="font-medium text-[#14100E]">34/146, N Usman Road, T. Nagar (Opp. GRT Jewellers)</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B71925]" />
@@ -88,21 +90,21 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Frameless, Clean Devotional Lord Hanuman (Maruthi) Hero Artwork (5 cols) */}
+          {/* Right Column: Devotional Lord Hanuman Artwork (order-1 on mobile, order-2 on desktop) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative flex justify-center items-center h-full"
+            className="order-1 lg:order-2 lg:col-span-5 relative flex justify-center items-center h-full mb-2 lg:mb-0"
           >
             {/* Ambient Divine Radiance Aura behind the picture */}
-            <div className="absolute w-[320px] sm:w-[400px] h-[320px] sm:h-[400px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
+            <div className="absolute w-[240px] sm:w-[320px] lg:w-[400px] h-[240px] sm:h-[320px] lg:h-[400px] rounded-full bg-gradient-to-tr from-[#B71925]/20 via-[#D4AF37]/30 to-amber-200/40 blur-3xl pointer-events-none" />
 
             {/* Frameless floating image presentation */}
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative h-[min(540px,calc(100dvh-130px))] max-h-[560px] aspect-[3/4] flex items-center justify-center group"
+              className="relative h-[250px] sm:h-[320px] lg:h-[min(540px,calc(100dvh-130px))] max-h-[560px] aspect-[3/4] flex items-center justify-center group"
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_45px_rgba(183,25,37,0.18)] border-2 border-[#C6A15B]/50 bg-white">
                 <Image

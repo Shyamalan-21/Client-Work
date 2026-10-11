@@ -12,12 +12,13 @@ export const business = {
   email: "maruthijewellers@gmail.com",
   address: {
     street: "34/146, N Usman Road",
+    landmark: "Exactly Opposite to GRT Jewellers",
     locality: "T. Nagar",
     city: "Chennai",
     state: "Tamil Nadu",
     postalCode: "600017",
     country: "India",
-    formatted: "34/146, N Usman Road, T. Nagar, Chennai, Tamil Nadu - 600017, India"
+    formatted: "34/146, N Usman Road (Opposite to GRT Jewellers), T. Nagar, Chennai, Tamil Nadu - 600017, India"
   },
   coordinates: {
     latitude: 13.04455,
