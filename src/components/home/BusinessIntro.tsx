@@ -26,9 +26,6 @@ export function BusinessIntro() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 bg-[#B71925] text-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest border border-[#C6A15B] shadow-lg rounded-sm hidden sm:block">
-                  T. Nagar, Chennai
-                </div>
               </div>
             </ImageReveal>
           </div>
