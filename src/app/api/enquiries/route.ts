@@ -33,6 +33,13 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+function jsonResponse(data: unknown, init?: ResponseInit) {
+  const headers = new Headers(init?.headers);
+  headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+  headers.set("Pragma", "no-cache");
+  return NextResponse.json(data, { ...init, headers });
+}
+
 export async function POST(request: NextRequest) {
   try {
     // 1. IP extraction (safe extraction from multi-hop x-forwarded-for)
@@ -41,7 +48,7 @@ export async function POST(request: NextRequest) {
 
     // 2. Rate limiting check
     if (!checkRateLimit(clientIp)) {
-      return NextResponse.json(
+      return jsonResponse(
         { error: "Too many enquiries submitted. Please wait a minute and try again." },
         { status: 429 }
       );
@@ -50,7 +57,7 @@ export async function POST(request: NextRequest) {
     // 3. Payload size guard (max 100KB)
     const contentLength = request.headers.get("content-length");
     if (contentLength && parseInt(contentLength, 10) > 1024 * 100) {
-      return NextResponse.json(
+      return jsonResponse(
         { error: "Payload exceeds allowable limit." },
         { status: 413 }
       );
@@ -61,14 +68,14 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json();
     } catch {
-      return NextResponse.json(
+      return jsonResponse(
         { error: "Invalid JSON request payload." },
         { status: 400 }
       );
     }
 
     if (!body || typeof body !== "object") {
-      return NextResponse.json(
+      return jsonResponse(
         { error: "Request payload must be a JSON object." },
         { status: 400 }
       );
@@ -77,7 +84,7 @@ export async function POST(request: NextRequest) {
     // 5. Spam Honeypot check
     if (body.website_honeypot && typeof body.website_honeypot === "string" && body.website_honeypot.trim().length > 0) {
       // Reject bot submissions
-      return NextResponse.json(
+      return jsonResponse(
         { error: "Spam submission rejected" },
         { status: 400 }
       );
@@ -87,7 +94,7 @@ export async function POST(request: NextRequest) {
     const validationResult = enquirySchema.safeParse(body);
     if (!validationResult.success) {
       const formattedErrors = validationResult.error.flatten().fieldErrors;
-      return NextResponse.json(
+      return jsonResponse(
         {
           error: "Validation failed. Please review the form fields.",
           details: formattedErrors,
@@ -118,7 +125,7 @@ export async function POST(request: NextRequest) {
 
     console.info(`[Enquiry Received] ID: ${savedRecord.id} [${enquiryType}] from ${data.name} (${data.phone})`);
 
-    return NextResponse.json(
+    return jsonResponse(
       {
         success: true,
         message: "Your enquiry has been received by Sri Maruthi Old Silk Buyer. We will review your details and reach out to you.",
@@ -128,7 +135,7 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error("Enquiry processing error:", error);
-    return NextResponse.json(
+    return jsonResponse(
       { error: "An unexpected error occurred while processing your enquiry. Please try calling or messaging us on WhatsApp." },
       { status: 500 }
     );

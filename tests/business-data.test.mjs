@@ -6,7 +6,7 @@ import { business } from "../src/data/business.ts";
 import { silkCategories } from "../src/data/categories.ts";
 
 test("business phone numbers and contact details are consistent", () => {
-  assert.equal(business.name, "Sri Maruthi Old Silk Buyer");
+  assert.equal(business.name, "Sri Maruthi Old Silk Buyers");
   assert.equal(business.phone, "+91 98403 64567");
   assert.equal(business.whatsapp, "+91 98403 64567");
   assert.equal(business.phoneRaw, "+919840364567");
