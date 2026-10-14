@@ -61,8 +61,8 @@ export function SilkEditorial() {
 
           {/* Right Column: Visual Composition */}
           <FadeIn direction="right">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[3/4] rounded-xl overflow-hidden border-2 border-[#C6A15B]/40 shadow-lg">
+            <div className="grid grid-cols-2 gap-4 items-stretch">
+              <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-[#C6A15B]/40 shadow-lg">
                 <Image
                   src="/images/silk/kanchipuram.jpg"
                   alt="Kanchipuram Silk Pallu Weaving"
