@@ -24,11 +24,12 @@ export const business = {
     latitude: 13.04455,
     longitude: 80.232295
   },
+  facebook: "https://www.facebook.com/MarutiOldSilkSareeBuyers/",
   instagram: "https://www.instagram.com/maruthisilkbuyers/",
   digitalCard: "https://tooquick.com/Maruthi-Silk-Centre",
   googleBusinessProfile: "https://share.google/9LRRvlkBZjQB282ZB",
   googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=13.04455,80.232295",
-  whatsappDefaultMessage: "Hello Sri Maruthi Old Silk Buyer, I would like to enquire about selling my silk sarees. Please let me know the next steps."
+  whatsappDefaultMessage: "Hello Sri Maruthi Old Silk Buyers, I would like to enquire about selling my silk sarees. Please let me know the next steps."
 };
 
 export const getWhatsAppUrl = (customMessage?: string) => {

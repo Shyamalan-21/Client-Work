@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Phone, MessageSquare, Mail, MapPin, ExternalLink } from "lucide-react";
-import { InstagramIcon } from "@/components/ui/Icons";
+import { FacebookIcon, InstagramIcon } from "@/components/ui/Icons";
 import { business, getWhatsAppUrl } from "@/data/business";
 import { footerNavigation } from "@/data/navigation";
 import { Logo } from "@/components/ui/Logo";
@@ -139,6 +139,15 @@ export function Footer() {
 
               {/* Social & Digital Card */}
               <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={business.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Page"
+                  className="p-2 border border-[#C6A15B]/40 rounded hover:bg-[#C6A15B]/20 text-[#C6A15B] transition-colors"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
                 <a
                   href={business.instagram}
                   target="_blank"

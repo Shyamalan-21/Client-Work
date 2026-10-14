@@ -10,13 +10,12 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { Accordion } from "@/components/ui/Accordion";
 
 export const metadata: Metadata = {
-  title: "Sell Your Old Silk Sarees in Chennai | Sri Maruthi Old Silk Buyer T. Nagar",
+  title: "Sell Your Old Silk Sarees in Chennai | Sri Maruthi Old Silk Buyers T. Nagar",
   description:
-    "Sell your vintage and used silk sarees in Chennai. Submit an online enquiry or contact Sri Maruthi Old Silk Buyer on N Usman Road, T. Nagar for transparent individual evaluation.",
+    "Sell your vintage and used silk sarees in Chennai. Connect directly with Sri Maruthi Old Silk Buyers on N Usman Road, T. Nagar (Opp. GRT Jewellers) for transparent individual evaluation.",
   alternates: {
     canonical: "/sell-your-sarees",
   },
@@ -53,8 +52,8 @@ export default function SellYourSareesPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <Button href="#enquiry-form" variant="primary" size="lg">
-              Start an Enquiry Below
+            <Button href="#valuation" variant="primary" size="lg">
+              Get Instant Valuation
             </Button>
             <Button
               href={getWhatsAppUrl()}
@@ -105,17 +104,83 @@ export default function SellYourSareesPage() {
         </Container>
       </section>
 
-      {/* Main Interactive Form Section */}
-      <section id="enquiry-form" className="py-10 lg:py-12 bg-[#FAF7F2] border-b border-[#C6A15B]/30">
+      {/* Direct Valuation Section (No forms) */}
+      <section id="valuation" className="py-10 lg:py-14 bg-gradient-to-b from-[#FAF7F2] to-white border-b border-[#C6A15B]/30">
         <Container size="narrow">
           <SectionHeading
-            eyebrow="Online Form"
-            title="Submit Your Garment Details"
-            subtitle="Fill in basic information about your silk items. We do not ask for sensitive payment or financial details."
+            eyebrow="Instant Evaluation"
+            title="Connect Directly to Sell Your Old Silk"
+            subtitle="No lengthy forms required. Connect directly with our appraisal team via WhatsApp or call for immediate assistance."
             align="center"
           />
 
-          <EnquiryForm />
+          <div className="bg-white border-2 border-[#C6A15B]/40 rounded-2xl p-6 sm:p-8 shadow-md mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* WhatsApp Card */}
+              <div className="bg-[#FAF7F2] border border-[#C6A15B]/30 rounded-xl p-6 flex flex-col justify-between hover:border-[#25D366] transition-colors">
+                <div>
+                  <div className="w-12 h-12 rounded-full bg-[#25D366]/15 flex items-center justify-center text-[#25D366] mb-4">
+                    <MessageSquare className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#14100E] mb-2">WhatsApp Photo Appraisal</h3>
+                  <p className="text-xs sm:text-sm text-[#5C4D46] leading-relaxed mb-4">
+                    Take 1-2 clear photos of your saree pallu, body, and zari border and send them directly to us on WhatsApp. Our appraisal team will guide you on purity and estimated worth.
+                  </p>
+                </div>
+                <Button
+                  href={getWhatsAppUrl("Hello Sri Maruthi Old Silk Buyers, I would like to sell my silk sarees. Please guide me on evaluation.")}
+                  variant="whatsapp"
+                  size="md"
+                  className="w-full text-center"
+                >
+                  Send Photos on WhatsApp
+                </Button>
+              </div>
+
+              {/* Direct Call & Store Visit Card */}
+              <div className="bg-[#FAF7F2] border border-[#C6A15B]/30 rounded-xl p-6 flex flex-col justify-between hover:border-[#B71925] transition-colors">
+                <div>
+                  <div className="w-12 h-12 rounded-full bg-[#B71925]/15 flex items-center justify-center text-[#B71925] mb-4">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#14100E] mb-2">Direct Phone &amp; Store Visit</h3>
+                  <p className="text-xs sm:text-sm text-[#5C4D46] leading-relaxed mb-4">
+                    Bring your sarees directly to our shop in T. Nagar for an individual, transparent in-person assessment with instant settlement.
+                  </p>
+                </div>
+                <div className="space-y-2.5">
+                  <Button
+                    href={`tel:${business.phoneRaw}`}
+                    variant="primary"
+                    size="md"
+                    className="w-full text-center"
+                  >
+                    Call {business.phone}
+                  </Button>
+                  <Button
+                    href={business.googleMapsDirectionsUrl}
+                    variant="secondary"
+                    size="md"
+                    className="w-full text-center text-xs"
+                  >
+                    Get Directions (Opp. GRT Jewellers)
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Checklist Box */}
+            <div className="mt-6 pt-5 border-t border-[#C6A15B]/25 bg-[#FAF7F2]/60 rounded-xl p-4">
+              <span className="text-xs uppercase font-bold tracking-wider text-[#B71925] block mb-2">
+                What to Prepare for the Best Valuation:
+              </span>
+              <ul className="text-xs sm:text-sm text-[#5C4D46] space-y-1.5 list-disc list-inside">
+                <li>Clear photos showing the zari border, pallu, and body texture.</li>
+                <li>Approximate age or heritage of the saree (vintage, heirloom, wedding wear).</li>
+                <li>Bring original sarees in person to our T. Nagar store (opposite GRT Jewellers) for final verification.</li>
+              </ul>
+            </div>
+          </div>
         </Container>
       </section>
 
